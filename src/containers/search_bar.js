@@ -11,12 +11,15 @@ class SearcBar extends Component{
   }
 
   onInputChange(event){
-    console.log(event.target.value)
     this.setState({term: event.target.value})
+  }
+
+  onFormSubmit(event){
+    event.preventdefault()
   }
   render(){
     return(
-      <from className="input-group">
+      <from onSubmit={this.onFormSubmit} className="input-group">
         <input
           placeholder="Give a five day forcast of a city"
           className="form-control"
